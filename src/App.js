@@ -1,7 +1,7 @@
 import * as THREE from 'three'
 import { forwardRef } from 'react'
 import { Canvas, useFrame, useThree } from '@react-three/fiber'
-import { Html, useGLTF, softShadows, ScrollControls, useScroll, useTexture } from '@react-three/drei'
+import { Html, useGLTF, softShadows, ScrollControls, useScroll, useTexture, Center } from '@react-three/drei'
 import useRefs from 'react-use-refs'
 import './styles.css'
 import FAQ from './FAQs/FAQ'
@@ -11,9 +11,13 @@ softShadows()
 const rsqw = (t, delta = 0.1, a = 1, f = 1 / (2 * Math.PI)) => (a / Math.atan(1 / delta)) * Math.atan(Math.sin(2 * Math.PI * t * f) / delta)
 
 export default function App() {
+  let z = 0;
+  if(window.innerHeight < window.innerWidth){
+    z = -3.2
+  }
   return (
     <>
-    <Canvas shadows dpr={[1, 2]} camera={{ position: [0, -3.2, 40], fov: 12 }}>
+    <Canvas shadows dpr={[1, 2]} camera={{ position: [0, z, 40], fov: 12 }}>
       <ScrollControls pages={2}>
         <Composition />
       </ScrollControls>
@@ -29,6 +33,14 @@ function Composition({ ...props }) {
   const { width, height } = useThree((state) => state.viewport)
   const [group, mbp16, mbp14, keyLight, stripLight, fillLight, heading] = useRefs()
   const [textureRed, textureBlue] = useTexture(['/page1.jpg', '/page2.jpg'])
+  let posn = 0;
+  let head = ``;
+  let title = "";
+  if(window.innerHeight < window.innerWidth){
+    posn = -height / 2.65;
+    head = `Lets get coding`;
+    title = "KodeInKgp";
+  }
   useFrame((state, delta) => {
     const r1 = scroll.range(0 / 4, 1 / 4)
     const r2 = scroll.range(1 / 4, 1 / 4)
@@ -47,11 +59,11 @@ function Composition({ ...props }) {
       <directionalLight ref={keyLight} castShadow intensity={6}>
         <orthographicCamera attachObject={['shadow', 'camera']} args={[-10, 10, 10, -10, 0.5, 30]} />
       </directionalLight>
-      <group ref={group} position={[0, -height / 2.65, 0]} {...props}>
+      <group ref={group} position={[0, posn, 0]} {...props}>
         <spotLight ref={stripLight} position={[width * 2.5, 0, width]} angle={0.19} penumbra={1} intensity={0.25} />
         <spotLight ref={fillLight} position={[0, -width / 2.4, -width * 2.2]} angle={0.2} penumbra={1} intensity={2} distance={width * 3} />
         <M1 ref={mbp16} texture={textureRed} scale={width / 67}>
-          <Tag ref={heading} position={[-20, 30, 0]} head={`Lets Get Coding`} name="KodeInKgp"/>
+          <Tag ref={heading} position={[-20, 30, 0]} head={head} name={title}/>
         </M1>
         <M1 ref={mbp14} texture={textureBlue} scale={width / 77} rotation={[0, Math.PI, 0]} position={[0, 0, -width / 2.625]}>
         </M1>

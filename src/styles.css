@@ -195,28 +195,32 @@ h1 {
 }
 
 .faq_heading {
+  transition: 0.5s ease-in-out;
+  transform-origin: center;
   padding-top: 50px;
   font-size: 80px;
 }
 
 .faq_heading:hover {
   color: #10d6f5!important;
+  text-decoration: underline;
 }
 
 .about_kodeinkgp {
+  transition: 0.5s ease-in-out;
+  transform-origin: center;
   padding-top: 50px;
   font-size: 80px;
 }
 
 .about_kodeinkgp:hover {
   color: #10d6f5!important;
+  text-decoration: underline;
 }
 
 .about {
-  padding-top: 50px;
-  font-size: 20px;
-  padding: 20px;
-  padding-top: 50px;
+  padding: 60px;
+  font-size: 22px;
 }
 
 @media (max-width:600px) {
@@ -238,4 +242,8 @@ h1 {
   .accordion__content {
     font-size: 10px;
   }
+}
+
+body::-webkit-scrollbar {
+  display: none;
 }
