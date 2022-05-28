@@ -7,20 +7,20 @@ const FAQ = () => {
         <h1 className="faq_heading">FAQs</h1>
         <div className="accordion">
             <Accordion
-            title="Item 1 - Lorem ipsum dolor sit amet"
-            text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam"
+            title="Does one need to register or login for using the website?"
+            text="Absolutely not!! Anyone can use it at anytime"
             />
             <Accordion
-            title="Item 2 - Lorem ipsum dolor sit amet"
-            text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam"
+            title="Can we view only PDS questions here"
+            text="Yes. Till now we support only PDS but in future we plan to expand our domains into other subjects"
             />
             <Accordion
-            title="Item 3 - Lorem ipsum dolor sit amet"
-            text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam"
+            title="How to post doubts?"
+            text="Feel free to contact us in the contact page"
             />
             <Accordion
-            title="Item 4 - Lorem ipsum dolor sit amet"
-            text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam"
+            title="Do we get PDS lab as well as theory questions here?"
+            text="Yeah. Absolutely!! This website will be a one-stop solution for all PDS related issues"
             />
         </div>
         </div>

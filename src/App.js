@@ -51,10 +51,9 @@ function Composition({ ...props }) {
         <spotLight ref={stripLight} position={[width * 2.5, 0, width]} angle={0.19} penumbra={1} intensity={0.25} />
         <spotLight ref={fillLight} position={[0, -width / 2.4, -width * 2.2]} angle={0.2} penumbra={1} intensity={2} distance={width * 3} />
         <M1 ref={mbp16} texture={textureRed} scale={width / 67}>
-          <Tag ref={heading} position={[-20, 30, 0]} head="LETS GET CODING"/>
+          <Tag ref={heading} position={[-20, 30, 0]} head={`Lets Get Coding`} name="KodeInKgp"/>
         </M1>
         <M1 ref={mbp14} texture={textureBlue} scale={width / 77} rotation={[0, Math.PI, 0]} position={[0, 0, -width / 2.625]}>
-          {/* <Tag ref={right} position={[10, 14, 0]} head="up to" stat="3.7x" expl={`faster CPU\nperformance¹`} /> */}
         </M1>
       </group>
     </>
@@ -86,10 +85,13 @@ const M1 = forwardRef(({ texture, children, ...props }, ref) => {
   )
 })
 
-const Tag = forwardRef(({ head, ...props }, ref) => {
+const Tag = forwardRef(({ head, name, ...props }, ref) => {
   return (
+    <>
     <Html ref={ref} className="data" center {...props}>
-      <h1>{head}</h1>
+      <h1>{name}</h1>
+      <div>{head}</div>
     </Html>
+    </>
   )
 })
