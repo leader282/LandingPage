@@ -191,7 +191,7 @@ h1 {
 }
 
 .accordion__content {
-  margin: 5px;
+  margin-bottom: 10px;
 }
 
 .faq_heading {
@@ -221,6 +221,7 @@ h1 {
 .about {
   padding: 60px;
   font-size: 22px;
+  line-height: 33px;
 }
 
 @media (max-width:600px) {
@@ -235,12 +236,13 @@ h1 {
   }
   .about {
     font-size: 15px;
+    line-height: 22px;
   }
   .accordion__header h4 {
     font-size: 18px;
   }
   .accordion__content {
-    font-size: 10px;
+    font-size: 15px;
   }
 }
 

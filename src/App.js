@@ -18,7 +18,7 @@ export default function App() {
   return (
     <>
     <Canvas shadows dpr={[1, 2]} camera={{ position: [0, z, 40], fov: 12 }}>
-      <ScrollControls pages={2}>
+      <ScrollControls pages={3}>
         <Composition />
       </ScrollControls>
     </Canvas>
