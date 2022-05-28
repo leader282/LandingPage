@@ -1,6 +1,9 @@
-import { React, useState } from "react";
+import { React, useState, useEffect } from "react";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import { useSpring, animated } from "react-spring";
+import Aos from 'aos';
+import 'aos/dist/aos.css';
+
 function Accordion(props) {
   const [open, setOpen] = useState(false);
   //toggle accordion function
@@ -33,8 +36,12 @@ function Accordion(props) {
     },
     config: { duration: "120" }
   });
+
+  useEffect(() => {
+      Aos.init({duration: 2000});
+  }, [])
   return (
-    <animated.div className="accordion__item" style={openAnimation}>
+    <animated.div className="accordion__item" data-aos="fade-left" style={openAnimation}>
       <div className="accordion__header" onClick={toggleHandler}>
         <h4 style={styles.accordionTitle}>{props.title}</h4>
         <animated.i style={iconAnimation}>

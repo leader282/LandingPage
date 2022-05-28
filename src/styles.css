@@ -153,12 +153,14 @@ h1 {
 
 .accordion__item {
   width: 40%;
-  max-height: 25px;
-  padding: 17px 10px;
+  max-height: 40px;
+  padding-bottom: 10px;
+  padding-left: 5px;
   border-bottom: 1px solid #c9c9c9;
   color: #fff;
   overflow: hidden;
   cursor: pointer;
+  margin-bottom: 50px;
 }
 
 .accordion__header {
@@ -169,7 +171,7 @@ h1 {
 
 .accordion__header h4 {
   transition: 0.2s ease-in-out;
-  font-size: 16px;
+  font-size: 20px;
   font-weight: 400;
   margin-bottom: 10px;
 }
@@ -192,11 +194,51 @@ h1 {
   margin: 5px;
 }
 
+.faq_heading {
+  padding-top: 50px;
+  font-size: 80px;
+}
+
+.faq_heading:hover {
+  color: #10d6f5!important;
+}
+
+.about_kodeinkgp {
+  padding-top: 50px;
+  font-size: 80px;
+}
+
+.about_kodeinkgp:hover {
+  color: #10d6f5!important;
+}
+
+.about {
+  padding-top: 50px;
+  font-size: 20px;
+  padding: 20px;
+  padding-top: 50px;
+}
+
 @media (max-width:600px) {
   h1 {
       font-size: 30px;
   }
   .accordion__item {
       width: 80%;
+  }
+  .faq_heading {
+    font-size: 35px;
+  }
+  .about_kodeinkgp {
+    font-size: 35px;
+  }
+  .about {
+    font-size: 15px;
+  }
+  .accordion__header h4 {
+    font-size: 18px;
+  }
+  .accordion__content {
+    font-size: 10px;
   }
 }
