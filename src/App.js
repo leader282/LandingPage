@@ -6,6 +6,7 @@ import useRefs from 'react-use-refs'
 import './styles.css'
 import FAQ from './FAQs/FAQ'
 import About from './About/About'
+import Navbar from './Navbar/Navbar'
 
 softShadows()
 const rsqw = (t, delta = 0.1, a = 1, f = 1 / (2 * Math.PI)) => (a / Math.atan(1 / delta)) * Math.atan(Math.sin(2 * Math.PI * t * f) / delta)
@@ -17,6 +18,7 @@ export default function App() {
   }
   return (
     <>
+    <Navbar />
     <Canvas shadows dpr={[1, 2]} camera={{ position: [0, z, 40], fov: 12 }}>
       <ScrollControls pages={2}>
         <Composition />
